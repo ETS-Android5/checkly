@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".SheetView"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sheet Summary"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_margin="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="10dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="40dp"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="20dp"
+            android:background="@drawable/main_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="290dp"
+                android:orientation="vertical"
+                android:background="@drawable/main_background">
+
+                <ImageView
+                    android:id="@+id/sheetView_ic"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/f_icon"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/sheetView_score"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_margin="5dp"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:gravity="center"
+                            android:background="@drawable/empty_icon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Score"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/sheetView_misses"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_margin="5dp"
+                            android:text="0"
+                            android:textSize="24sp"
+
+                            android:gravity="center"
+                            android:background="@drawable/empty_icon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Misses"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_margin="5dp"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:id="@+id/sheetView_percent"
+                            android:gravity="center"
+                            android:background="@drawable/empty_icon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Percent"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Answers Table"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:layout_marginHorizontal="20dp">
+
+        <ListView
+            android:id="@+id/sheetView_ListView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

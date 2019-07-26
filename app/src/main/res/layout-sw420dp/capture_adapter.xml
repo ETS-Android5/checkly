@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/capture_adapter_ic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/f_material_ic"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score:"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="130dp"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="16sp"
+            android:layout_marginStart="130dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Items:"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginLeft="270dp"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/capture_adapter_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CheckedFile"
+            android:fontFamily="@font/robotoslab_regular"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="85dp"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:id="@+id/capture_adapter_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginLeft="185dp"
+            android:textSize="16sp"
+            android:layout_marginStart="185dp" />
+
+        <TextView
+            android:id="@+id/capture_adapter_items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="325dp"
+            android:textSize="16sp"/>
+
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

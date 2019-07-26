@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+    <com.shinmashita.checkly.ui.camera.CameraSourcePreview
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.shinmashita.checkly.ui.camera.GraphicOverlay
+            android:id="@+id/graphicOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.shinmashita.checkly.ui.camera.CameraSourcePreview>
+
+    <View
+        android:layout_width="303dp"
+        android:layout_height="135dp"
+        android:background="@drawable/ocr_capture_guide"
+        android:layout_gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/ocr_capture_sheetListBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_menu_black_24dp"
+        android:layout_margin="15dp"
+        android:layout_gravity="right"
+        android:padding="6dp"
+        android:onClick="onClickSheetList"
+        android:background="@drawable/material_gray_round_rectangle"/>
+
+    <ImageButton
+        android:id="@+id/ocr_capture_settingsBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_settings_black_24dp"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="right"
+        android:padding="6dp"
+        android:background="@drawable/material_gray_round_rectangle"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp" />
+
+    <ImageView
+        android:id="@+id/ocr_crossHair"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_add_black_24dp"/>
+
+    <ImageView
+        android:id="@+id/ocr_capture_btn"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="430dp"
+        android:layout_marginBottom="0dp"
+        android:onClick="OcrHoldBtnClick"
+        android:background="@drawable/ic_panorama_fish_eye_black_24dp"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/ocr_capture_bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="75dp"
+        app:cardCornerRadius="20dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/colorPrimaryDark">
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Score: "
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="@color/colorEmpWhite"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/ocr_capture_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="0"
+                        android:textColor="@color/colorCoolBlue"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Items: "
+                        android:textColor="@color/colorEmpWhite"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/ocr_capture_items"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="0"
+                        android:textColor="@color/colorCoolBlue"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/ocr_capture_addBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="ADD"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="15sp"
+                        android:onClick="nameDlg"
+                        android:background="@drawable/round_rectangle"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="20dp"
+                android:background="@color/colorWhite">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ocr_capture_materialIc"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/f_material_ic"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Raw Sheet Summary"
+                        android:fontFamily="@font/robotoslab_bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorCoolDark"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="20dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Score: "
+                            android:fontFamily="@font/roboto_regular"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            android:textColor="@color/colorDefaultFont"
+                            android:paddingLeft="50dp"
+                            android:layout_margin="5dp"/>
+
+                        <TextView
+                            android:id="@+id/capture_summary_scoreView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_margin="5dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Items: "
+                            android:fontFamily="@font/roboto_regular"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            android:textColor="@color/colorDefaultFont"
+                            android:paddingLeft="50dp"
+                            android:layout_margin="5dp"/>
+
+                        <TextView
+                            android:id="@+id/capture_summary_itemView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_margin="5dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Misses: "
+                            android:fontFamily="@font/roboto_regular"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            android:textColor="@color/colorDefaultFont"
+                            android:paddingLeft="50dp"
+                            android:layout_margin="5dp"/>
+
+                        <TextView
+                            android:id="@+id/capture_summary_missView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_margin="5dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Percentage: "
+                            android:fontFamily="@font/roboto_regular"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            android:textColor="@color/colorDefaultFont"
+                            android:paddingLeft="50dp"
+                            android:layout_margin="5dp"/>
+
+                        <TextView
+                            android:id="@+id/capture_summary_percentView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_margin="5dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

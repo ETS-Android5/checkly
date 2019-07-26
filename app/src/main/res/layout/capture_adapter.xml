@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/capture_adapter_ic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/f_material_ic"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score:"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="130dp"
+                android:textSize="12sp"
+                android:layout_marginStart="130dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Items:"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="200dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/capture_adapter_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckedFile"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="65dp"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:id="@+id/capture_adapter_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="170dp"
+                android:textSize="12sp"
+                android:layout_marginStart="170dp" />
+
+            <TextView
+                android:id="@+id/capture_adapter_items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="240dp"
+                android:textSize="12sp"/>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
