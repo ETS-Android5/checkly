@@ -103,7 +103,15 @@ public class MainActivity extends AppCompatActivity {
         gvisionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                open_ocrActivity();
+                try {
+                    String test=keysHandler.getActiveKey();
+                    open_ocrActivity();
+                } catch (Exception e)
+                {
+                    Toast.makeText(MainActivity.this, "Add an active answer key first.", Toast.LENGTH_SHORT).show();
+                    open_keyEditorActivity();
+                }
+
             }
         });
 
