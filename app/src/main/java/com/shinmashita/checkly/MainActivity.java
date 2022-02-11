@@ -42,11 +42,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        //if(!getSplashValue()){
-       //     storeSplashValue(true);
-        //}
-
         gvisionBtn=(Button)findViewById(R.id.gvisionBtn);
         keyEditBtn=(Button)findViewById(R.id.keyEditBtn);
         sheetViewBtn=(Button)findViewById(R.id.main_sheetView_btn);
